@@ -4,7 +4,6 @@ import numpy as np
 import argparse
 import os
 
-C:\Users\natal\OneDrive\Pulpit\Projekt1\python_projekt1.py
 
 
 class Transformations:
@@ -60,3 +59,89 @@ class Transformations:
             lam = np.arctan2(Y, X)
             flh.extend([np.rad2deg(fi), np.rad2deg(lam), h])
         return(flh)
+    
+    # BLH ---> XYZ
+        """
+            Algorytm przelicza współrzędne geodezyjne (BLH) na współrzędne w układzie ortokartezjańskim (XYZ)
+        """
+    def filh2XYZ(self, fi, lam, h):
+        XYZ = []
+        for fi, lam, h in zip(fi, lam, h):
+            while True:
+                N = self.Npu(fi)
+                X = (N + h) * np.cos(fi) * np.cos(lam)
+                Xp = X
+                Y = (N + h) * np.cos(fi) * np.sin(lam)
+                Z = (N * (1 - self.e2) + h) * np.sin(fi)
+                if abs(Xp - X) < (0.000001/206265):
+                    break
+            
+            XYZ.append([X, Y, Z])
+        return(XYZ)
+
+
+
+        # XYZ ---> NEU
+        """
+            Obliczenie macierzy Rneu
+        """
+    def Rneu(self, fi, lam):
+        Rneu = np.array([[-np.sin(fi)*np.cos(lam), -np.sin(lam), np.cos(fi)*np.cos(lam)],
+                         [-np.sin(fi)*np.sin(lam),  np.cos(lam), np.cos(fi)*np.sin(lam)],
+                         [             np.cos(fi),            0,             np.sin(fi)]])
+        return(Rneu)
+    
+    
+        """
+            Przeliczenie wsp XYZ na neu
+        """
+    def xyz2neup(self, X, Y, Z, X0, Y0, Z0):
+        neu = []
+        p = np.sqrt(X0**2 + Y0**2)
+        fi = np.arctan(Z0 / (p*(1 - self.e2)))
+        while True:
+            N = self.Npu(fi)
+            h = (p / np.cos(fi)) - N
+            fi_poprzednia = fi
+            fi = np.arctan((Z0 / p)/(1-((N * self.e2)/(N + h))))
+            if abs(fi_poprzednia - fi) < (0.000001/206265):
+                break 
+        N = self.Npu(fi)
+        h = p/np.cos(fi) - N
+        lam = np.arctan(Y0 / X0)
+        
+        R_neu = self.Rneu(fi, lam)
+        X_sr = [X - X0, Y - Y0, Z - Z0] 
+        X_rneu = R_neu.T@X_sr
+        neu.append(X_rneu.T)
+            
+        return(neu)
+
+
+
+        # TRANSFORMACJA WSP BL ---> 1992
+        """
+            Algorytm przelicza współrzędne geodezyjne (BL) na współrzędne w układzie 1992 (XY)
+        """
+    def cale92(self, fi, lam):
+        lam0 = (19*np.pi)/180
+        m = 0.9993
+        wsp = []
+        for fi,lam in zip(fi,lam):
+            b2 = (self.a**2) * (1-self.e2)   #krotsza polowa
+            e2p = (self.a**2 - b2 ) / b2   #drugi mimosrod elipsy
+            dlam = lam - lam0
+            t = np.tan(fi)
+            ni = np.sqrt(e2p * (np.cos(fi))**2)
+            N = self.Npu(fi)
+            sigma = self.Sigma(fi)
+            
+            xgk = sigma + ((dlam**2)/2)*N*np.sin(fi)*np.cos(fi) * ( 1+ ((dlam**2)/12)*(np.cos(fi))**2 * ( 5 - (t**2)+9*(ni**2) + 4*(ni**4)     )  + ((dlam**4)/360)*(np.cos(fi)**4) * (61-58*(t**2)+(t**4) + 270*(ni**2) - 330*(ni**2)*(t**2))  )
+            ygk = (dlam*N* np.cos(fi)) * (1+(((dlam)**2/6)*(np.cos(fi))**2) *(1-(t**2)+(ni**2))+((dlam**4)/120)*(np.cos(fi)**4)*(5-18*(t**2)+(t**4)+14*(ni**2)-58*(ni**2)*(t**2)) )
+                        
+            x92 = xgk*m - 5300000
+            y92 = ygk*m + 500000
+            wsp.append([x92, y92]) 
+            
+        return(wsp)
+
