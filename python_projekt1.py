@@ -228,3 +228,36 @@ class Transformations:
             lam = np.deg2rad(data[:,1])
             wsp00 = self.cale00(fi, lam)
             np.savetxt(f"WYNIK_{funkcja}.txt", wsp00, delimiter=";")
+            
+            np.savetxt(f"WYNIK_{funkcja}.txt", wsp00, delimiter=";")
+
+
+
+if __name__ == "__main__":
+    try:
+        parser = argparse.ArgumentParser(description="Podaj plik")
+        parser.add_argument("-plik", type = str, help = "Podaj nazwę pliku, w którym znajdują się dane wejsciowe (ps. oprócz nazwy podaj rozszerzenie:)")
+        parser.add_argument("-elip", type = str, help = "Wybierz elipsoidę, na której ma wykonać się transformacja, wpisz jedną: 'WGS84', 'GRS80', 'Elipsoida Krasowskiego' ")
+        parser.add_argument("-funkcja", type = str, help = "Wybierz transformację jaką chcesz obliczyć: 'XYZ_BLH', 'BLH_XYZ', 'XYZ_NEU' ")
+        args = parser.parse_args()
+    except SyntaxError:
+        print(f"Niestety nie ma takiego pliku. Spróbuj podać pełną scieżkę do pliku lub upewnij się że wpisujesz dobrą nazwę")
+                   
+    
+    elip = {'WGS84':[6378137.000, 0.00669438002290], 'GRS80':[6378137.000, 0.00669438002290], 'Elipsoida Krasowskiego':[6378245.000, 0.00669342162296]}
+    funkcja = {'XYZ_BLH' : 'hirvonen', 'BLH_XYZ' : 'filh2XYZ', 'XYZ_NEU' : 'xyz2neup', 'BL_PL1992' : 'cale92', 'BL_PL2000' : 'cale00'}
+        
+    try:
+        geo = Transformations(elip[args.elip.upper()])
+        finito = geo.pliczek(args.plik, args.funkcja.upper())
+        print("Zapisano")
+    except KeyError():
+        print(f"Podana funkcja/elipsoida nie istnieją, proszę upewnij się, że korzystasz z istniejących elipsoid")
+    except AttributeError:
+        print("Podana funkcja/elipsoida nie istnieje, proszę wprowadzić dostępne wartosci.")
+    except FileNotFoundError:
+        print("Nie znaleziono takiego pliku. Proszę spróbować wprowadzić inny plik.")
+    except IndexError:
+        print("Nieodpowiedni format pliku. Proszę wprowadzić dane do pliku tak jak pokazano w przyładzie.")
+    except ValueError:
+        print("Nieodpowiedni format pliku. Proszę wprowadzić dane do pliku tak jak pokazano w przyładzie.")
