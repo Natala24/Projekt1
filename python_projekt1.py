@@ -4,7 +4,7 @@ import numpy as np
 import argparse
 import os
 
-
+C:\Users\natal\OneDrive\Pulpit\Projekt1\python_projekt1.py
 
 
 class Transformations:
