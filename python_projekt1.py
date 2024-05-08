@@ -10,8 +10,8 @@ class Transformations:
     def __init__(self, elipsoida):
         """
         Parametry elipsoid:
-        a - duża półos elipsoidy 
-        e2 - kwadrat mimosrodu elipsoidy
+        a - duża półos elipsoidy - promień równikowy
+        e2 - kwadrat mimosrodu elipsoidy - promień południkowy
             + WGS84
             + GRS80
             + Elipsoida Krasowskiego
@@ -117,19 +117,16 @@ class Transformations:
             
         return(neu)
 
-
-
-        # TRANSFORMACJA WSP BL ---> 1992
         """
-            Algorytm przelicza współrzędne geodezyjne (BL) na współrzędne w układzie 1992 (XY)
+            Algorytm przelicza współrzędne BL na współrzędne XY w układzie 1992
         """
     def cale92(self, fi, lam):
         lam0 = (19*np.pi)/180
         m = 0.9993
         wsp = []
         for fi,lam in zip(fi,lam):
-            b2 = (self.a**2) * (1-self.e2)   #krotsza polowa
-            e2p = (self.a**2 - b2 ) / b2   #drugi mimosrod elipsy
+            b2 = (self.a**2) * (1-self.e2)   
+            e2p = (self.a**2 - b2 ) / b2   # DRUGI MIMORÓD
             dlam = lam - lam0
             t = np.tan(fi)
             ni = np.sqrt(e2p * (np.cos(fi))**2)
@@ -145,12 +142,11 @@ class Transformations:
             
         return(wsp)
 
-     # TRANSFORMACJA WSP BL ---> 2000
         """
-            Następujący algorytm umożliwia przeliczenie współrzędnych geodezyjnych (BLH) na współrzędne w układzie 2000 (XY)
+            Następujący algorytm umożliwia przeliczanie współrzędnych BLH na współrzędne XY w układzie 2000
         """
 
-    def cale00(self, fi, lam):
+    def cale92(self, fi, lam):
         m=0.999923
         print(fi, lam)
         wsp = []
@@ -170,7 +166,7 @@ class Transformations:
                 strefa = 8
                 lam0 = np.deg2rad(24)
             else:
-                print("Punkt poza strefami odwzorowawczymi układu PL-2000")        
+                print("Punkt znajduje się poza strefą odwzorowawczą układu PL_2000")        
                      
             b2 = (self.a**2) * (1-self.e2)   #krotsza polos
             e2p = ( self.a**2 - b2 ) / b2   #drugi mimosrod elipsy
@@ -190,7 +186,7 @@ class Transformations:
     
     
     
-    def pliczek(self, plik, funkcja):
+    def file(self, plik, funkcja):
         data = np.genfromtxt(plik,  delimiter = " ")
         if funkcja == "XYZ_BLH":
             X = data[:,0]
