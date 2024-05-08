@@ -127,11 +127,5 @@ OPIS PROGRAMU
   5.763372029424777254e+06   6.431328112376346253e+06
   ```
    
-   
-   ZNANE BŁĘDY
-   ```sh
-      - zawarte w kodzie transformacje nie działają, gdy użytkownik próbuje wykonać je na elipsoidzie Krasowskiego
-      - tranformacje PL1992 i PL2000 dają niepoprawne wyniki, gdy użytkownik próbuje wykonać je na elipspidzie Krasowskiego
-   ```
- 
+
  
