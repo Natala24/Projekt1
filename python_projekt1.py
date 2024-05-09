@@ -146,7 +146,7 @@ class Transformations:
             Następujący algorytm umożliwia przeliczanie współrzędnych BLH na współrzędne XY w układzie 2000
         """
 
-    def cale92(self, fi, lam):
+    def cale00(self, fi, lam):
         m=0.999923
         print(fi, lam)
         wsp = []
