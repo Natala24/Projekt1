@@ -66,12 +66,7 @@ OPIS PROGRAMU
   PRZYKŁADOWE TRANSFORMACJE
   
   XYZ ---> BLH
-  dla danych z pliku (kolejno X[m], Y[m], Z[m])
-  ```sh
-  12345.789 65789.003 36674.123
-  11111.222 22222.343 55555.332
-  ```
-  otrzymujemy wyniki (w kolejnych linijkach fi1, l1, h1, fi2, l2, h2, ...)
+  Dla danych z pliku (kolejno X[m], Y[m], Z[m]) otrzymujemy wyniki (w kolejnych linijkach fi1, l1, h1, fi2, l2, h2, ...)
   ```sh
     5.209727221932659802e+01
     2.103153333279777115e+01
@@ -112,50 +107,34 @@ OPIS PROGRAMU
       ```
   
   BLH ---> XYZ
-  dla danych z pliku (kolejno fi, lambda, h)
+  Dla danych z przykładowego pliku, otrzymujemy wyniki (kolejno X[m], Y[m], Z[m])
   ```sh
-  52 21 319
-  52 19 420
-  ```
-  otrzymujemy wyniki (kolejno X[m], Y[m], Z[m])
-  ```sh
-  3.673785422237344086e+06   1.410234096034315648e+06   5.003054720799141563e+06
-  3.720822705660262145e+06   1.281182001713992795e+06   5.003134309885255992e+06
+    3.519148476177780423e+06;-8.058846240752805956e+06;7.221782633644362912e+06
+    3.518246811368130147e+06;-8.060617148406046443e+06;7.220251167392918840e+06
+    3.517344529170780908e+06;-8.062387742863076739e+06;7.218719484124908224e+06
+    3.516441628994218074e+06;-8.064158022301887162e+06;7.217187582870155573e+06
+    3.520158619975043926e+06;-8.061159468966477551e+06;7.218719486032334156e+06
+    3.519011511451998260e+06;-8.060834155242622830e+06;7.219638519677306525e+06
+    3.518300408910815138e+06;-8.062658984539208002e+06;7.217953559884781018e+06
+    3.517155899965156335e+06;-8.064259403564777225e+06;7.216727970327695832e+06
+    3.519906124335436150e+06;-8.060581254222247750e+06;7.219485354949392378e+06
+    3.519011512378350366e+06;-8.060834157364573330e+06;7.219638521584975533e+06
+    3.520609529018185567e+06;-8.060274053074301220e+06;7.219485354313515127e+06
+    3.518961021663734689e+06;-8.060718500659395941e+06;7.219791687940459698e+06
   ```
   
-  XYZ,X0Y0Z0 ---> neu
-  dla danych z pliku 'wsp_XYZ_NEU.txt' (kolejno fi, lambda h,)
-  ```sh
-   7.221181885654304642e+05
-  -2.477294595237924659e+05 
-  -1.045556128732857667e+07
-  ```
-  otrzymujemy wyniki (kolejno n, e, u)
+  XYZ,X0Y0Z0 ---> NEU
+  Dla danych z pliku, otrzymujemy wyniki (kolejno n, e, u)
   
-  Ważne jest, aby współrzędne punktów podane zostały w odpowiedniej kolejności - jako pierwsze podać należy współrzędne początku układu NEU (x0, y0), a dopiero potem współrzędne, do których policzyć chcemy wektor. Stąd, żeby otrzymać jeden punkt wyjściowy należy wprowadzić dane aż dwóch punktów wejściowych.
+Ważne jest, aby współrzędne punktów podane zostały w odpowiedniej kolejności - jako pierwsze podać należy współrzędne początku układu NEU (x0, y0), a dopiero potem współrzędne, do których policzyć chcemy wektor. Stąd, żeby otrzymać jeden punkt wyjściowy należy wprowadzić dane aż dwóch punktów wejściowych.
   
   BL ---> XY PL1992
-  dla danych z pliku 'bl-pl.txt' (kolejno fi, lambda)
-  ```sh
-  52  21
-  52  17
-  ```
-  otrzymujemy wyniki (kolejno x92[m], y92[m])
-  ```sh
-  4.611972433942528442e+05   6.372531611049008789e+05
-  4.611972433942528442e+05   3.627468388950995868e+05
-  ```
-  
+  Dla danych z pliku, otrzymujemy wyniki (kolejno x92[m], y92[m])
   BL ---> XY PL2000
-  dla danych z pliku 'bl-pl.txt' (kolejno fi, lambda)
+
+ Następnie otrzymujemy wyniki (kolejno x00[m], y00[m])
   ```sh
-  52  21
-  52  17
-  ```
-  otrzymujemy wyniki (kolejno x00[m], y00[m])
-  ```sh
-  5.762899772909278050e+06   7.500000000000000000e+06
-  5.763372029424777254e+06   6.431328112376346253e+06
+
   ```
    
 
