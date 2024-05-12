@@ -28,14 +28,14 @@ OPIS PROGRAMU
    -funkcja przyjmuje nazwę transformacji, którą chcemy wykonać
   ```
   
-  Wybór elipsoidy możliwy jest poprzez wpisanie jednej z poniższych nazw:
+  WYBÓR ELIPSOIDY MOŻLIWY JEST POPRZEZ WPISANIE JEDNEJ Z PONIŻSZYCH NAZWY:
   ```sh
    'WGS84'
    'GRS80'
    'Elipsoida Krasowskiego'
   ```
   
-  Wybór transformacji możliwy jest poprzez wpisanie jednej z poniższych nazw:
+  WYBÓR TRANSFORMACJI MOŻLIWY JEST POPRZEZ WPISANIE JEDNEJ Z PONIŻSZYCH NAZW:
   ```sh
    'XYZ_BLH'
    'BLH_XYZ'
@@ -44,7 +44,7 @@ OPIS PROGRAMU
    'BL_PL2000'
   ```
   
-  Po wyborze parametrów i załadowaniu pliku z danymi utworzy się plik tekstowy zawierający wyniki wykonanych obliczeń, a na konsoli pojawi się komunikat:
+  PO WYBORZE PARAMETRÓW I ZAŁADOWANIU PLIKU Z DANYMI UTWORZY SIĘ PLIK TEKSTOWY ZAWIERAJĄCY WYNIKI WYKONANYCH OBLICZEŃ, A NA KONSOLI POJAWIĄ SIĘ KOMUNIKATY:
   ```sh
    Zapisano
   ```
@@ -54,15 +54,16 @@ OPIS PROGRAMU
   (gdzie {funkcja} oznacza nazwę transformacji, którą chcemy wykonać)
   ```
   
-  Przykładowe wywołanie programu:
+  PRZYKŁADOWE WYWOŁANIA PROGRAMU:
   ```sh
-   python skrypt.py -plik dane.txt -elip GRS80 -funkcja XYZ_BLH
-   lub
-   python skrypt.py -plik dane.txt -elip WGS84 -funkcja BL_PL1992
+    -> python skrypt.py -plik dane.txt -elip GRS80 -funkcja XYZ_BLH
+    -> python skrypt.py -plik dane.txt -elip WGS84 -funkcja BL_PL1992
+    -> python skrypt.py -plik dane.txt -elip Elipsoida Krasowskiego -funkcja BL_XYZ
+    -> python skrypt.py -plik dane.txt -elip WGS84 -funkcja XYZ_NEU
   ```
   
   
-  Przykładowe transformacje:
+  PRZYKŁADOWE TRANSFORMACJE
   
   XYZ ---> BLH
   dla danych z pliku (kolejno X[m], Y[m], Z[m])
