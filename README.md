@@ -131,10 +131,8 @@ Ważne jest, aby współrzędne punktów podane zostały w odpowiedniej kolejno�
   BL ---> XY PL1992
   Dla danych z pliku, otrzymujemy wyniki (kolejno x92[m], y92[m])
   BL ---> XY PL2000
-
- Następnie otrzymujemy wyniki (kolejno x00[m], y00[m])
   ```sh
-
+-6.376098582823808494e-03;-1.292264747426501506e-02;1.162128304618341088e-03
   ```
    
 
