@@ -31,7 +31,10 @@ OPIS PROGRAMU
    -funkcja przyjmuje nazwę transformacji, którą chcemy wykonać
   ```
   
-  WYBÓR ELIPSOIDY MOŻLIWY JEST POPRZEZ WPISANIE JEDNEJ Z PONIŻSZYCH NAZWY:
+  WYBÓR ELIPSOIDY:
+  ```sh
+  Możliwe, jest wtedy, gdy wpiszemy nazwę wybranej przez nas elipsoidy:
+  ```
   ```sh
    'WGS84'
    'GRS80'
