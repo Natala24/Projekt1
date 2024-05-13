@@ -105,6 +105,7 @@ OPIS PROGRAMU
     2.103153318299952090e+01
     1.414055828107520938e+02
       ```
+
   
   BLH ---> XYZ
   Dla danych z przykładowego pliku, otrzymujemy wyniki (kolejno X[m], Y[m], Z[m])
