@@ -41,7 +41,10 @@ OPIS PROGRAMU
    'Elipsoida Krasowskiego'
   ```
   
-  WYBÓR TRANSFORMACJI MOŻLIWY JEST POPRZEZ WPISANIE JEDNEJ Z PONIŻSZYCH NAZW:
+  WYBÓR TRANSFORMACJI:
+  ```sh
+  Transformację wybieramy, wpisując jedną z poniższych nazw.
+  ```
   ```sh
    'XYZ_BLH'
    'BLH_XYZ'
