@@ -21,7 +21,10 @@ PRZEPROWADZONE TRANSFORMACJE:
 ```
 
 OPIS PROGRAMU
+```sh
  Plik przyjmuje argumenty podane za pomocą następujących flag:
+ ```
+
  ```sh
    -plik przyjmuje plik (koniecznie z rozszerzeniem), w którym znajdują się dane potrzebne do wykonania transformacji
    -elip przyjmuje nazwę modelu elipsoidy, na której chcemy dokonać transformacji
