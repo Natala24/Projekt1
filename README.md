@@ -168,7 +168,7 @@ Kolejną transfomacją, która będzie wykonana jest przeliczenie współrzędny
   ```
 BL ---> XY PL2000
 ```sh
-Dla danych z pliku, otrzymujemy wyniki (kolejno x92[m], y92[m])
+Dla danych z pliku, otrzymujemy wyniki (kolejno x92, y92)
  ```
   ```sh
 -7.593850300552112147e+30;9.002123020348507139e+26
