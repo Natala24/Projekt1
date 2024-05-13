@@ -59,7 +59,7 @@ OPIS PROGRAMU:
   ```sh
    Zapisano
   ```
-  Pliku wynikowy zapisuje się pod nazwą:
+ NAZWA ZAPISANEGO PLIKU:
   ```sh
   "WYNIK_{funkcja}.txt"
   (gdzie {funkcja} oznacza nazwę transformacji, którą chcemy wykonać)
