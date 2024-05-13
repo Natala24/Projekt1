@@ -52,8 +52,10 @@ OPIS PROGRAMU:
    'BL_PL1992'
    'BL_PL2000'
   ```
-  
-  PO WYBORZE PARAMETRÓW I ZAŁADOWANIU PLIKU Z DANYMI UTWORZY SIĘ PLIK TEKSTOWY ZAWIERAJĄCY WYNIKI WYKONANYCH OBLICZEŃ, A NA KONSOLI POJAWIĄ SIĘ KOMUNIKATY:
+  KOMUNIKAT
+  ```sh
+  Po wybraniu wszystkich parametrów i załadowaniu pliku z przykładowymi danymi, utworzy się plik z wynikami obliczeń w formacie txt.
+```
   ```sh
    Zapisano
   ```
