@@ -165,9 +165,11 @@ Kolejną transfomacją, która będzie wykonana jest przeliczenie współrzędny
 -7.607306654979123807e+30;8.990061769041092960e+26
 -7.608650244527395998e+30;8.989644053815074412e+26
 -7.605963454533838509e+30;8.990479767387636561e+26
-  ```  
-  Dla danych z pliku, otrzymujemy wyniki (kolejno x92[m], y92[m])
-  BL ---> XY PL2000
+  ```
+BL ---> XY PL2000
+```sh
+Dla danych z pliku, otrzymujemy wyniki (kolejno x92[m], y92[m])
+ ```
   ```sh
 -7.593850300552112147e+30;9.002123020348507139e+26
 -7.607288649775469569e+30;8.997945594122355164e+26
