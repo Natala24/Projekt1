@@ -78,7 +78,7 @@ OPIS PROGRAMU:
   
   XYZ ---> BLH
   ```sh
-  Dla danych z pliku (kolejno X[m], Y[m], Z) otrzymujemy wyniki (w kolejnych linijkach fi1, l1, h1, fi2, l2, h2, ...)
+  Dla danych z pliku (kolejno X[m], Y, Z) otrzymujemy wyniki (w kolejnych linijkach fi1, l1, h1, fi2, l2, h2, ...)
   ```
   ```sh
     5.209727221932659802e+01
