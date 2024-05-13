@@ -141,8 +141,10 @@ OPIS PROGRAMU:
     3.518961021663734689e+06;-8.060718500659395941e+06;7.219791687940459698e+06
   ```
   
-  XYZ,X0Y0Z0 ---> NEU
+  XYZ ---> NEU
+  ```sh
 Po przeprowadzeniu transformacji, otrzymujemy następujące wartości ( kolejno : N, E, U)
+```
   ```sh
 -6.376098582823808494e-03;-1.292264747426501506e-02;1.162128304618341088e-03
   ```  
