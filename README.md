@@ -1,4 +1,4 @@
-Projekt 1 - Transformacje
+PROJEKT NUMER
 
 PRZEPROWADZONE TRANOSFORMACJE:
 ```sh
