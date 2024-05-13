@@ -74,10 +74,12 @@ OPIS PROGRAMU:
   ```
   
   
-  PRZYKŁADOWE TRANSFORMACJE
+  PRZYKŁADOWE TRANSFORMACJE:
   
   XYZ ---> BLH
+  ```sh
   Dla danych z pliku (kolejno X[m], Y[m], Z[m]) otrzymujemy wyniki (w kolejnych linijkach fi1, l1, h1, fi2, l2, h2, ...)
+  ```
   ```sh
     5.209727221932659802e+01
     2.103153333279777115e+01
@@ -119,7 +121,9 @@ OPIS PROGRAMU:
 
   
   BLH ---> XYZ
+ ```sh
   Dla danych z przykładowego pliku, otrzymujemy wyniki (kolejno X[m], Y[m], Z[m])
+```
   ```sh
     3.519148476177780423e+06;-8.058846240752805956e+06;7.221782633644362912e+06
     3.518246811368130147e+06;-8.060617148406046443e+06;7.220251167392918840e+06
