@@ -147,9 +147,11 @@ Po przeprowadzeniu transformacji, otrzymujemy następujące wartości ( kolejno 
 ```
   ```sh
 -6.376098582823808494e-03;-1.292264747426501506e-02;1.162128304618341088e-03
-  ```  
-Kolejną transfomacją, która będzie wykonana jest przeliczenie współrzędnych geodezyjnech do układu współrzędnych 1992.
+  ```
 BL ---> XY PL1992
+```sh
+Kolejną transfomacją, która będzie wykonana jest przeliczenie współrzędnych geodezyjnech do układu współrzędnych 1992.
+ ``` 
   ```sh
 -7.588505031305843012e+30;8.995907769979433183e+26
 -7.601933921345102224e+30;8.991733227929724057e+26
