@@ -124,7 +124,7 @@ OPIS PROGRAMU:
   
   BLH ---> XYZ
  ```sh
-  Dla danych z przykładowego pliku, otrzymujemy wyniki (kolejno X[m], Y[m], Z[m])
+  Dla danych z przykładowego pliku, otrzymujemy wyniki (kolejno X, Y[m], Z[m])
   ```
   ```sh
     3.519148476177780423e+06;-8.058846240752805956e+06;7.221782633644362912e+06
