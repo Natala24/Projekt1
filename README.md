@@ -124,16 +124,18 @@ OPIS PROGRAMU
   ```
   
   XYZ,X0Y0Z0 ---> NEU
-  Dla danych z pliku, otrzymujemy wyniki (kolejno n, e, u)
-  
-Ważne jest, aby współrzędne punktów podane zostały w odpowiedniej kolejności - jako pierwsze podać należy współrzędne początku układu NEU (x0, y0), a dopiero potem współrzędne, do których policzyć chcemy wektor. Stąd, żeby otrzymać jeden punkt wyjściowy należy wprowadzić dane aż dwóch punktów wejściowych.
-  
-  BL ---> XY PL1992
-  Dla danych z pliku, otrzymujemy wyniki (kolejno x92[m], y92[m])
-  BL ---> XY PL2000
+Po przeprowadzeniu transformacji, otrzymujemy następujące wartości ( kolejno : N, E, U)
   ```sh
 -6.376098582823808494e-03;-1.292264747426501506e-02;1.162128304618341088e-03
-  ```
+  ```  
+Kolejną transfomacją, która będzie wykonana jest przeliczenie współrzędnych geodezyjnech do układu współrzędnych 1992.
+BL ---> XY PL1992
+  ```sh
+-6.376098582823808494e-03;-1.292264747426501506e-02;1.162128304618341088e-03
+  ```  
+  Dla danych z pliku, otrzymujemy wyniki (kolejno x92[m], y92[m])
+  BL ---> XY PL2000
+
    
 
  
