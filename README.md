@@ -20,7 +20,7 @@ PRZEPROWADZONE TRANSFORMACJE:
     Python oraz importowane biblioteki: numpy oraz argparse
 ```
 
-OPIS PROGRAMU
+OPIS PROGRAMU:
 ```sh
  Plik przyjmuje argumenty podane za pomocą następujących flag:
  ```
