@@ -245,7 +245,7 @@ if __name__ == "__main__":
         
     try:
         geo = Transformations(elip[args.elip.upper()])
-        finito = geo.pliczek(args.plik, args.funkcja.upper())
+        finito = geo.file(args.plik, args.funkcja.upper())
         print("Zapisano")
     except KeyError():
         print(f"Podana funkcja/elipsoida nie istnieją, proszę upewnij się, że korzystasz z istniejących elipsoid")
