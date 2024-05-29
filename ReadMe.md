@@ -78,7 +78,7 @@ OPIS PROGRAMU:
   
   XYZ ---> BLH
   ```sh
-  Dla danych z pliku (kolejno X, Y, Z) otrzymujemy wyniki (w kolejnych linijkach fi1, l1, h1, fi2, l2, h2, ...)
+  Dla danych z pliku (kolejno X[m], Y[m], Z[m]) otrzymujemy wyniki (w kolejnych linijkach fi1, l1, h1, fi2, l2, h2, ...)
   ```
   ```sh
     5.209727221932659802e+01
@@ -124,7 +124,7 @@ OPIS PROGRAMU:
   
   BLH ---> XYZ
  ```sh
-  Dla danych z przykładowego pliku, otrzymujemy wyniki (kolejno X, Y, Z)
+  Dla danych z przykładowego pliku, otrzymujemy wyniki (kolejno X[m], Y[m], Z[m])
   ```
   ```sh
     3.519148476177780423e+06;-8.058846240752805956e+06;7.221782633644362912e+06
@@ -141,16 +141,17 @@ OPIS PROGRAMU:
     3.518961021663734689e+06;-8.060718500659395941e+06;7.219791687940459698e+06
   ```
   
-  XYZ ---> NEU
+  XYZ, X0Y0Z0 ---> NEU  (kolejno fi, lambda, h)
   ```sh
 Po przeprowadzeniu transformacji, otrzymujemy następujące wartości ( kolejno : N, E, U)
 ```
+Ważne jest, aby współrzędne punktów podane zostały w odpowiedniej kolejności - jako pierwsze podać należy współrzędne początku układu NEU (x0, y0), a dopiero potem współrzędne, do których policzyć chcemy wektor. Stąd, żeby otrzymać jeden punkt wyjściowy należy wprowadzić dane aż dwóch punktów wejściowych.
   ```sh
 -6.376098582823808494e-03;-1.292264747426501506e-02;1.162128304618341088e-03
   ```
-BL ---> XY PL1992
+BL ---> XY PL1992 dla danych z pliku 'BL_PL1992.txt' (kolejno fi, lambda)
 ```sh
-Kolejną transfomacją, która będzie wykonana jest przeliczenie współrzędnych geodezyjnech do układu współrzędnych 1992.
+Kolejną transfomacją, która będzie wykonana jest przeliczenie współrzędnych geodezyjnech do układu współrzędnych 1992. Otrzymujemy wyniki (kolejno X92[m],Y92[m])
  ``` 
   ```sh
 -7.588505031305843012e+30;8.995907769979433183e+26
@@ -166,9 +167,9 @@ Kolejną transfomacją, która będzie wykonana jest przeliczenie współrzędny
 -7.608650244527395998e+30;8.989644053815074412e+26
 -7.605963454533838509e+30;8.990479767387636561e+26
   ```
-BL ---> XY PL2000
+BL ---> XY PL2000 (kolejno fi, lambda)
 ```sh
-Dla danych z pliku, otrzymujemy wyniki (kolejno x92, y92)
+Dla danych z pliku, otrzymujemy wyniki (kolejno x2000, y2000)
  ```
   ```sh
 -7.593850300552112147e+30;9.002123020348507139e+26
