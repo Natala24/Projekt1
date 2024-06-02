@@ -90,7 +90,7 @@ OPIS PROGRAMU:
   
   XYZ, X0Y0Z0 ---> NEU  (kolejno fi, lambda, h[stopnie, minuty, sekundy])
   ```sh
-Po przeprowadzeniu transformacji, otrzymujemy następujące wartości ( kolejno : N, E, U)
+Po przeprowadzeniu transformacji, otrzymujemy następujące wartości ( kolejno : N, E, U[stopnie, minuty, sekundy])
 ```
 Ważne jest, aby współrzędne punktów podane zostały w odpowiedniej kolejności - jako pierwsze podać należy współrzędne początku układu NEU (x0, y0), a dopiero potem współrzędne, do których policzyć chcemy wektor. Stąd, żeby otrzymać jeden punkt wyjściowy należy wprowadzić dane aż dwóch punktów wejściowych.
 
