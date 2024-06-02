@@ -2,8 +2,13 @@ from math import *
 import numpy as np
 import argparse
 import os
+<<<<<<< HEAD
 
 
+=======
+ 
+ 
+>>>>>>> 1b1d0937603039f9bdddf25d7ab5bbd9dea995c1
 class Transformations:
     def __init__(self, elipsoida):
         """
@@ -16,16 +21,18 @@ class Transformations:
         """
         self.a = elipsoida[0]
         self.e2 = elipsoida[1]
-            
-            
-            
+
         """
         Poniższe funkcje są funkcjami pomocniczymi dla obliczeń transformacji
         """
     def Npu(self, fi):     # promien krzywizny w I wertykale
         N = self.a / np.sqrt(1 - self.e2 * np.sin(fi)**2)
         return N
+<<<<<<< HEAD
 
+=======
+ 
+>>>>>>> 1b1d0937603039f9bdddf25d7ab5bbd9dea995c1
     def Sigma(self, fi):
         A0 = 1 - (self.e2/4) - (3*(self.e2)**2)/64 -  (5*(self.e2)**3)/256
         A2 = 3/8 * (self.e2 + (self.e2)**2/4 + 15*(self.e2)**3/128)
@@ -33,8 +40,12 @@ class Transformations:
         A6 = 35 * (self.e2)**3 / 3072
         sigma = self.a * ( A0 * fi - A2 * np.sin(2*fi) + A4 * np.sin(4*fi) - A6 * np.sin(6*fi) )
         return sigma
+<<<<<<< HEAD
     
+=======
+>>>>>>> 1b1d0937603039f9bdddf25d7ab5bbd9dea995c1
 
+ 
         
         # XYZ ---> BLH - ALGORYTM HIRVONENA
         """
@@ -52,11 +63,17 @@ class Transformations:
                 fi = np.arctan(z / (p * (1 - N * self.e2 / (N + h))))
                 if abs(fip - fi) < (0.000001/206265):
                     break
+<<<<<<< HEAD
         
             lam = np.arctan2(y, x)
             flh.extend([np.rad2deg(fi), np.rad2deg(lam), h])
         return flh
     
+=======
+            lam = np.arctan2(y, x)
+            flh.extend([np.rad2deg(fi), np.rad2deg(lam), h])
+        return flh
+>>>>>>> 1b1d0937603039f9bdddf25d7ab5bbd9dea995c1
     # BLH ---> XYZ
         """
             Algorytm przelicza współrzędne geodezyjne (BLH) na współrzędne w układzie ortokartezjańskim (XYZ)
@@ -72,12 +89,16 @@ class Transformations:
                 Z = (N * (1 - self.e2) + h) * np.sin(fi)
                 if abs(Xp - X) < (0.000001/206265):
                     break
-            
             XYZ.append([X, Y, Z])
         return XYZ
+<<<<<<< HEAD
 
 
 
+=======
+ 
+ 
+>>>>>>> 1b1d0937603039f9bdddf25d7ab5bbd9dea995c1
         # XYZ ---> NEU
         """
             Obliczenie macierzy Rneu
@@ -87,8 +108,12 @@ class Transformations:
                          [-np.sin(fi)*np.sin(lam),  np.cos(lam), np.cos(fi)*np.sin(lam)],
                          [             np.cos(fi),            0,             np.sin(fi)]])
         return Rneu
+<<<<<<< HEAD
     
     
+=======
+
+>>>>>>> 1b1d0937603039f9bdddf25d7ab5bbd9dea995c1
         """
             Przeliczenie wsp XYZ na neu
         """
@@ -106,14 +131,18 @@ class Transformations:
         N = self.Npu(fi)
         h = p/np.cos(fi) - N
         lam = np.arctan(Y0 / X0)
-        
         R_neu = self.Rneu(fi, lam)
         X_sr = [X - X0, Y - Y0, Z - Z0] 
         X_rneu = R_neu.T @ X_sr
         neu.append(X_rneu.T)
+<<<<<<< HEAD
             
         return neu
 
+=======
+        return neu
+ 
+>>>>>>> 1b1d0937603039f9bdddf25d7ab5bbd9dea995c1
         """
             Algorytm przelicza współrzędne BL na współrzędne XY w układzie 1992
         """
@@ -129,6 +158,7 @@ class Transformations:
             ni = np.sqrt(e2p * (np.cos(fi))**2)
             N = self.Npu(fi)
             sigma = self.Sigma(fi)
+<<<<<<< HEAD
             
             xgk = sigma + ((dlam**2) / 2) * N * np.sin(fi) * np.cos(fi) * (1 + ((dlam**2) / 12) * (np.cos(fi))**2 * (5 - (t**2) + 9 * (ni**2) + 4 * (ni**4)) + ((dlam**4) / 360) * (np.cos(fi)**4) * (61 - 58 * (t**2) + (t**4) + 270 * (ni**2) - 330 * (ni**2) * (t**2)))
             ygk = (dlam * N * np.cos(fi)) * (1 + (((dlam)**2 / 6) * (np.cos(fi))**2) * (1 - (t**2) + (ni**2)) + ((dlam**4) / 120) * (np.cos(fi)**4) * (5 - 18 * (t**2) + (t**4) + 14 * (ni**2) - 58 * (ni**2) * (t**2)))
@@ -139,10 +169,19 @@ class Transformations:
             
         return wsp
 
+=======
+            xgk = sigma + ((dlam**2) / 2) * N * np.sin(fi) * np.cos(fi) * (1 + ((dlam**2) / 12) * (np.cos(fi))**2 * (5 - (t**2) + 9 * (ni**2) + 4 * (ni**4)) + ((dlam**4) / 360) * (np.cos(fi)**4) * (61 - 58 * (t**2) + (t**4) + 270 * (ni**2) - 330 * (ni**2) * (t**2)))
+            ygk = (dlam * N * np.cos(fi)) * (1 + (((dlam)**2 / 6) * (np.cos(fi))**2) * (1 - (t**2) + (ni**2)) + ((dlam**4) / 120) * (np.cos(fi)**4) * (5 - 18 * (t**2) + (t**4) + 14 * (ni**2) - 58 * (ni**2) * (t**2)))
+            x92 = xgk * m - 5300000
+            y92 = ygk * m + 500000
+            wsp.append([x92, y92]) 
+        return wsp
+ 
+>>>>>>> 1b1d0937603039f9bdddf25d7ab5bbd9dea995c1
         """
             Następujący algorytm umożliwia przeliczanie współrzędnych BLH na współrzędne XY w układzie 2000
         """
-
+ 
     def cale00(self, fi, lam):
         m = 0.999923
         print(fi, lam)
@@ -164,7 +203,10 @@ class Transformations:
                 lam0 = np.deg2rad(24)
             else:
                 print("Punkt znajduje się poza strefą odwzorowawczą układu PL_2000")        
+<<<<<<< HEAD
                      
+=======
+>>>>>>> 1b1d0937603039f9bdddf25d7ab5bbd9dea995c1
             b2 = (self.a**2) * (1 - self.e2)   
             e2p = (self.a**2 - b2) / b2   # DRUGI MIMORÓD
             dlam = lam - lam0
@@ -172,6 +214,7 @@ class Transformations:
             ni = np.sqrt(e2p * (np.cos(fi))**2)
             N = self.Npu(fi)
             sigma = self.Sigma(fi)
+<<<<<<< HEAD
             
             xgk = sigma + ((dlam**2) / 2) * N * np.sin(fi) * np.cos(fi) * (1 + ((dlam**2) / 12) * (np.cos(fi))**2 * (5 - (t**2) + 9 * (ni**2) + 4 * (ni**4)) + ((dlam**4) / 360) * (np.cos(fi)**4) * (61 - 58 * (t**2) + (t**4) + 270 * (ni**2) - 330 * (ni**2) * (t**2)))
             ygk = (dlam * N * np.cos(fi)) * (1 + (((dlam)**2 / 6) * (np.cos(fi))**2) * (1 - (t**2) + (ni**2)) + ((dlam**4) / 120) * (np.cos(fi)**4) * (5 - 18 * (t**2) + (t**4) + 14 * (ni**2) - 58 * (ni**2) * (t**2)))
@@ -182,15 +225,31 @@ class Transformations:
             
         return wsp
 
+=======
+            xgk = sigma + ((dlam**2) / 2) * N * np.sin(fi) * np.cos(fi) * (1 + ((dlam**2) / 12) * (np.cos(fi))**2 * (5 - (t**2) + 9 * (ni**2) + 4 * (ni**4)) + ((dlam**4) / 360) * (np.cos(fi)**4) * (61 - 58 * (t**2) + (t**4) + 270 * (ni**2) - 330 * (ni**2) * (t**2)))
+            ygk = (dlam * N * np.cos(fi)) * (1 + (((dlam)**2 / 6) * (np.cos(fi))**2) * (1 - (t**2) + (ni**2)) + ((dlam**4) / 120) * (np.cos(fi)**4) * (5 - 18 * (t**2) + (t**4) + 14 * (ni**2) - 58 * (ni**2) * (t**2)))
+            x00 = xgk * m
+            y00 = ygk * m + strefa * 1000000 + 500000
+            wsp.append([x00, y00])
+        return wsp
+ 
+>>>>>>> 1b1d0937603039f9bdddf25d7ab5bbd9dea995c1
     def file(self, plik, funkcja):
         if not os.path.isfile(plik):
             raise FileNotFoundError("Plik nie istnieje.")
         tab = np.genfromtxt(plik, delimiter=';', skip_header=4)
+<<<<<<< HEAD
         
         X = tab[:, 0]
         Y = tab[:, 1]
         Z = tab[:, 2]
 
+=======
+        X = tab[:, 0]
+        Y = tab[:, 1]
+        Z = tab[:, 2]
+ 
+>>>>>>> 1b1d0937603039f9bdddf25d7ab5bbd9dea995c1
         if funkcja == "XYZ_BLH":
             wsp00 = self.hirvonen(X, Y, Z)
         elif funkcja == "BLH_XYZ":
@@ -203,33 +262,58 @@ class Transformations:
             wsp00 = self.cale00(np.deg2rad(X), np.deg2rad(Y))
         else:
             raise KeyError("Nieznana funkcja przeliczająca.")
+<<<<<<< HEAD
         
         # Zapisywanie wyników do pliku w formacie matematycznym
         np.savetxt(f"WYNIK_{funkcja}.txt", wsp00, delimiter=";", fmt="%.6f")
 
 
+=======
+        # Zapisywanie wyników do pliku w formacie matematycznym
+        np.savetxt(f"WYNIK_{funkcja}.txt", wsp00, delimiter=";", fmt="%.6f")
+ 
+ 
+>>>>>>> 1b1d0937603039f9bdddf25d7ab5bbd9dea995c1
 if __name__ == "__main__":
     elip = {
         "WGS84": [6378137.000, 0.00669438002290],
         "GRS80": [6378137.000, 0.00669438002290],
         "Elipsoida Krasowskiego": [6378245.000, 0.00669342162296]
     }
+<<<<<<< HEAD
 
     funkcja = ["XYZ_BLH", "BLH_XYZ", "XYZ_neu", "BL_PL1992", "BL_PL2000"]
 
+=======
+ 
+    funkcja = ["XYZ_BLH", "BLH_XYZ", "XYZ_neu", "BL_PL1992", "BL_PL2000"]
+ 
+>>>>>>> 1b1d0937603039f9bdddf25d7ab5bbd9dea995c1
     parser = argparse.ArgumentParser()
     parser.add_argument('-plik', type=str, help='Podaj nazwę pliku: ')
     parser.add_argument('-elip', type=str, help='Wybierz elipsoidę: WGS84, GRS80, Elipsoida Krasowskiego')
     parser.add_argument('-funkcja', type=str, help='Wybierz funkcję przeliczającą: XYZ_BLH, BLH_XYZ, XYZ_neu, BL_PL1992, BL_PL2000')
+<<<<<<< HEAD
 
     args = parser.parse_args()
     
+=======
+ 
+    args = parser.parse_args()
+>>>>>>> 1b1d0937603039f9bdddf25d7ab5bbd9dea995c1
     try:
         geo = Transformations(elip[args.elip])
     except KeyError:
         raise KeyError("Nie znaleziono elipsoidy. Dostępne opcje: WGS84, GRS80, Elipsoida Krasowskiego")
+<<<<<<< HEAD
     
+=======
+>>>>>>> 1b1d0937603039f9bdddf25d7ab5bbd9dea995c1
     try:
         geo.file(args.plik, args.funkcja)
     except KeyError:
         raise KeyError("Nie znaleziono funkcji przeliczającej. Dostępne opcje: XYZ_BLH, BLH_XYZ, XYZ_neu, BL_PL1992, BL_PL2000")
+<<<<<<< HEAD
+=======
+
+>>>>>>> 1b1d0937603039f9bdddf25d7ab5bbd9dea995c1
