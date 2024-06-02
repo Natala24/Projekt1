@@ -1,4 +1,4 @@
-rom math import *
+from math import *
 import numpy as np
 import argparse
 import os
