@@ -78,7 +78,7 @@ OPIS PROGRAMU:
   
   XYZ ---> BLH
   ```sh
-  Dla danych z pliku (kolejno X[m], Y[m], Z[m]) otrzymujemy wyniki (w kolejnych linijkach fi1, l1, h1, fi2, l2, h2, ...)
+  Dla danych z pliku (kolejno X[m], Y[m], Z[m]) otrzymujemy wyniki (w kolejnych linijkach fi1, l1, h1, fi2, l2, h2, [stopnie, minuty, sekundy]...)
   ```
 
   
@@ -88,20 +88,20 @@ OPIS PROGRAMU:
   ```
   
   
-  XYZ, X0Y0Z0 ---> NEU  (kolejno fi, lambda, h)
+  XYZ, X0Y0Z0 ---> NEU  (kolejno fi, lambda, h[stopnie, minuty, sekundy])
   ```sh
 Po przeprowadzeniu transformacji, otrzymujemy następujące wartości ( kolejno : N, E, U)
 ```
 Ważne jest, aby współrzędne punktów podane zostały w odpowiedniej kolejności - jako pierwsze podać należy współrzędne początku układu NEU (x0, y0), a dopiero potem współrzędne, do których policzyć chcemy wektor. Stąd, żeby otrzymać jeden punkt wyjściowy należy wprowadzić dane aż dwóch punktów wejściowych.
 
-BL ---> XY PL1992 dla danych z pliku 'BL_PL1992.txt' (kolejno fi, lambda)
+BL ---> XY PL1992 dla danych z pliku 'BL_PL1992.txt' (kolejno fi, lambda [stopnie, minuty, sekundy])
 ```sh
 Kolejną transfomacją, która będzie wykonana jest przeliczenie współrzędnych geodezyjnech do układu współrzędnych 1992. Otrzymujemy wyniki (kolejno X92[m],Y92[m])
  ``` 
  
-BL ---> XY PL2000 (kolejno fi, lambda)
+BL ---> XY PL2000 (kolejno fi, lambda [stopnie, minuty, sekundy])
 ```sh
-Dla danych z pliku, otrzymujemy wyniki (kolejno x2000, y2000)
+Dla danych z pliku, otrzymujemy wyniki (kolejno x2000[m], y2000[m])
  ```
   
 
