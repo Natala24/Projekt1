@@ -84,6 +84,7 @@ OPIS PROGRAMU:
   
   BLH ---> XYZ
  ```sh
+ Plik wejściowy dla BL [stopnie, minuty, sekundy] dla H [m]
   Dla danych z przykładowego pliku, otrzymujemy wyniki (kolejno X[m], Y[m], Z[m])
   ```
   
