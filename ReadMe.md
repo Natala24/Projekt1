@@ -78,7 +78,7 @@ OPIS PROGRAMU:
   
   XYZ ---> BLH
   ```sh
-  Dla danych z pliku (kolejno X[m], Y[m], Z[m]) otrzymujemy wyniki (w kolejnych linijkach fi1, l1, h1, fi2, l2, h2, [stopnie, minuty, sekundy]...)
+  Dla danych z pliku (kolejno X[m], Y[m], Z[m]) otrzymujemy wyniki (w kolejno w pierwszej kolumnie  fi1, l1, h1 w kolejnej kolumnie  fi2, l2, h2, [stopnie, minuty, sekundy]) itd... 
   ```
 
   
